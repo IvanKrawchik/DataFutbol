@@ -3,7 +3,7 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-    <section class="text-center"style="height: 100vh;">
+    <section class="text-center">
         <h2>Welcome!</h2>
         {% if user.is_authenticated %}
             Hi {{ user.username }}!
@@ -13,4 +13,16 @@
             <a href="/signup" class="btn btn-success">Signup</a>
         {% endif %}
     </section>
+    <h3> Hola, soy tu ayudante tecnico de futbol ¿En que puedo ayudarte?</h3>
+    <form method="POST" style="height: 100vh;">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="user_input">
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+
+    {% if response %}
+        <div>
+            {{ response|safe }}
+        </div>
+    {% endif %}
 {% endblock %}

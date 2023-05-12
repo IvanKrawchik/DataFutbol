@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from UsersAuth import views
+from .views import chatbot
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,5 @@ urlpatterns = [
     path('signin/',views.signin, name='signin'),
     path('signout/',views.signout, name='signout'),
     path('signup/',views.signup, name='signup'),
-    path('profile/',views.profile, name='profile'),
+    path('profile/',chatbot, name='chatbot')
 ]
