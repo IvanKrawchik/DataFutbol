@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock%}
+{% block styles %}
+    <link rel="stylesheet" href="/templates/styles/home.css">
+{% endblock %}
+{% block content %}
+    <section class="welcome-section d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="container text-center">
+        <h1 class="display-4">Bienvenido a nuestra web de estadísticas de fútbol</h1>
+        <p class="lead">Explora y descubre información detallada sobre los mejores equipos y jugadores del mundo.</p>
+        </div>
+    </section>
+
+    <section class="presentation-section" style="height: 70vh;">
+        <div class="container section-content">
+            <h2 class="display-4">Presentación de la empresa</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus purus nec justo dictum, et tincidunt risus aliquet. Vestibulum dignissim ex ac malesuada consequat. Integer id arcu pharetra, rutrum lacus ut, hendrerit mauris. Donec sagittis gravida bibendum. Mauris blandit vestibulum aliquam. Proin sodales, sapien sed feugiat vestibulum, est justo fringilla eros, in consectetur arcu orci in ex.</p>
+            <p>Nuestras estadísticas abarcan las siguientes ligas:</p>
+            <ul>
+                <li>Liga 1</li>
+                <li>Premier League</li>
+                <li>Serie A</li>
+                <li>Bundesliga</li>
+                <li>Ligue 1</li>
+                <li>La Liga</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-section py-5" style="height: 80vh;">
+        <div class="container">
+            <h2 class="text-center mb-4">Formulario de contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

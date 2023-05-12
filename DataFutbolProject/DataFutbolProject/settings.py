@@ -55,7 +55,7 @@ ROOT_URLCONF = 'DataFutbolProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['DataFutbolProject/UsersAuth/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'DataFutbolProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'DataFutbolBBDD',
+        'NAME':'Data-futbol',
         'HOST':'localhost',
         'PORT':'3306',
         'USER':'root',
-        'PASSWORD':'root',
+        'PASSWORD':'Ivan0204',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'"
         }
