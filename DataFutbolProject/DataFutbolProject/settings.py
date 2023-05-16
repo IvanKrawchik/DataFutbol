@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'DataFutbolProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'Data-futbol',
+        'NAME':'data-futbol',
         'HOST':'localhost',
         'PORT':'3306',
         'USER':'root',
