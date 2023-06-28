@@ -53,3 +53,11 @@ def profile(request):
 def home(request): 
     return render(request, 'home.html')
 
+def equipos(request): 
+    return render(request, 'equipos.html')
+
+def jugadores(request): 
+    return render(request, 'jugadores.html')
+
+def competiciones(request): 
+    return render(request, 'competiciones.html')

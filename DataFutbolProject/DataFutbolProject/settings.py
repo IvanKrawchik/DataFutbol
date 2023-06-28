@@ -88,6 +88,9 @@ DATABASES = {
     }
 }
 
+#Birthday date
+# USE_L10N = False
+# DATE_INPUT_FORMATS = ['%d-%m-%Y']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

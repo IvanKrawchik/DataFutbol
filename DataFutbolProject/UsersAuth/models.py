@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Equipos(models.Model):
@@ -15,7 +16,7 @@ class Jugadores(models.Model):
     edad = models.DateField()
     altura = models.CharField(max_length=5)
     nacionalidad = models.CharField(max_length=50)
-    equipo_id = models.ForeignKey(Equipos,null=False, blank=True, on_delete=models.CASCADE)
+    equipo = models.ForeignKey(Equipos,null=False, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre, self.posicion, self.equipo_id
@@ -24,8 +25,7 @@ class Tecnicos(models.Model):
     tecnico_id= models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=50)
     edad = models.DateField()
-    nacionalidad = models.CharField(max_length=50)
-    equipo_id = models.ForeignKey(Equipos,null=False, blank=True, on_delete=models.CASCADE)
+    equipo = models.ForeignKey(Equipos,null=False, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre, self.equipo_id
