@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from UsersAuth import views
 from .views import chatbot
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +30,11 @@ urlpatterns = [
     path('signout/',views.signout, name='signout'),
     path('signup/',views.signup, name='signup'),
     path('profile/',chatbot, name='chatbot'),
-    path('jugadores/',views.jugadores, name='signup'),
-    path('equipos/',views.equipos, name='signup'),
-    path('competiciones/',views.competiciones, name='signup')
-]
+    path('jugadores/',views.jugadores, name='jugadores'),
+    path('registrarJugador/',views.registrarJugador),
+    path('jugadores/eliminacionJugador/<int:jugador_id>',views.eliminarJugador),
+    path('jugadores/edicionJugador/<int:jugador_id>',views.editarJugador),
+    path('editarJugador/',views.editarJugadorTemplate),
+    path('equipos/',views.equipos, name='equipos'),
+    path('competiciones/',views.competiciones, name='competiciones')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

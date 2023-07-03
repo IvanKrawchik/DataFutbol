@@ -2,5 +2,20 @@
 {% block title %}Equipos{% endblock%}
 
 {% block content %}
+    {% if user.is_authenticated %}
+        <h5> Equipos del futbol argentino</h5>
+        {% for equipo in equipos %}
+            <div>
+                <h5>{{ equipo.nombre }}</h5>
+                <img src="{{ equipo.escudo }}" alt="{{ equipo.nombre }}"> 
+            </div>
+        {% endfor %}
 
+    {% else %}
+        <section class="text-center" style="height: 100vh;">
+            <h2>Inicia sesion para acceder a esta seccion</h2>
+            <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
+            <a href="/signup" class="btn btn-success">Signup</a>
+        </section>
+    {% endif %}
 {% endblock %}

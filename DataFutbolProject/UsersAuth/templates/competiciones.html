@@ -2,5 +2,15 @@
 {% block title %}Competiciones{% endblock%}
 
 {% block content %}
-
+    {% if user.is_authenticated %}
+        <section style="height: 100vh;">
+            <h5>Proximamente...</h5>
+        </section>
+    {% else %}
+        <section class="text-center" style="height: 100vh;">
+            <h2>Inicia sesion para acceder a esta seccion</h2>
+            <a href="/signin" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>Login</a> 
+            <a href="/signup" class="btn btn-success">Signup</a>
+        </section>
+    {% endif %}
 {% endblock %}

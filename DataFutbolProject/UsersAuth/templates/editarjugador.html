@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Jugadores{% endblock%}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <h5>Editar Jugador</h5>
+            <form method="POST" action="/editarJugador/"> {% csrf_token %}
+                <div class="form-group">
+                    <label for="id">ID</label>
+                    <input value="{{jugador.jugador_id}}" type="text" id="id" name="id" class="form-control" readonly required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input value="{{jugador.nombre}}" type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="posicion">Posicion</label>
+                    <input value="{{jugador.posicion}}" type="text" id="posicion" name="posicion" class="form-control" placeholder="ARQ / DEF / MED / DEL" required>
+                </div>
+                <div class="form-group">
+                    <label for="nacimiento">Nacimiento</label>
+                    <input value="{{jugador.nacimiento}}" type="text" id="nacimiento" name="nacimiento" class="form-control" placeholder="YYYY-MM-DD" required>
+                </div>
+                <div class="form-group">
+                    <label for="altura">Altura</label>
+                    <input value="{{jugador.altura}}" type="text" id="altura" name="altura" class="form-control" placeholder="Ingrese Altura" required>
+                </div>
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <input value="{{jugador.nacionalidad}}" type="text" id="nacionalidad" name="nacionalidad" class="form-control" placeholder="Ingrese Nacionalidad" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success text-white mt-2">Agregar Jugador</button>
+                </div>
+        </div>
+    </div>
+{% endblock %}

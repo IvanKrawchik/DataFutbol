@@ -15,19 +15,22 @@
             <section class="text-center">
                 <h2>Welcome {{ user.username }}!</h2>
             </section>
+            <section style="height: 100vh;">
+                <h5> Hola, soy tu ayudante tecnico de futbol ¿En que puedo ayudarte?</h5>
+                <form method="POST" >
+                    {% csrf_token %}
+                    <input type="text" class="form-control" name="user_input">
+                    <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                </form>
+            
+                {% if response %}
+                    <div>
+                        {{ response|safe }}
+                    </div>
+                {% endif %}
 
-            <h5> Hola, soy tu ayudante tecnico de futbol ¿En que puedo ayudarte?</h5>
-            <form method="POST" style="height: 100vh;">
-                {% csrf_token %}
-                <input type="text" class="form-control" name="user_input">
-                <button type="submit" class="btn btn-primary mt-3">Enviar</button>
-            </form>
-        
-            {% if response %}
-                <div>
-                    {{ response|safe }}
-                </div>
-            {% endif %}
+                <a href="/signout" class="btn btn-danger mt-3">LogOut</a>
+            </section>
 
         {% else %}
             <section class="text-center" style="height: 100vh;">
