@@ -4,12 +4,21 @@
 {% block content %}
     {% if user.is_authenticated %}
         <h5> Equipos del futbol argentino</h5>
-        {% for equipo in equipos %}
-            <div>
-                <h5>{{ equipo.nombre }}</h5>
-                <img src="{{ equipo.escudo }}" alt="{{ equipo.nombre }}"> 
-            </div>
-        {% endfor %}
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-3 mb-3" style="margin-right: 0;">
+            {% for equipo in equipos %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ equipo.escudo }}" alt="{{ equipo.nombre }}" class="card-img-top">
+                        <div class="card-body">
+                            <h6 class="card-title">{{ equipo.nombre }}</h6>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/jugadores/?equipo_id={{equipo.equipo_id}}" class="text-body-secondary">Mas info</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
     {% else %}
         <section class="text-center" style="height: 100vh;">

@@ -55,11 +55,16 @@
                 </div>
                 <div class="form-group">
                     <label for="posicion">Posicion</label>
-                    <input type="text" id="posicion" name="posicion" class="form-control" placeholder="ARQ / DEF / MED / DEL" required>
+                    <select class="form-select" name="posicion" id="posicion" required>
+                        <option value="DEL">Delantero</option>
+                        <option value="MED">Mediocampista</option>
+                        <option value="DEF">Defensor</option>
+                        <option value="ARQ">Arquero</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="nacimiento">Nacimiento</label>
-                    <input type="text" id="nacimiento" name="nacimiento" class="form-control" placeholder="YYYY-MM-DD" required>
+                    <input type="date" id="nacimiento" name="nacimiento" class="form-control" value="1980-04-01" min="1970-04-01" max="2007-04-01" required>
                 </div>
                 <div class="form-group">
                     <label for="altura">Altura</label>
@@ -71,7 +76,7 @@
                 </div>
                 <div>
                     <label for="equipo_id_create">Equipo</label>
-                    <select class="form-select" name="equipo_id_create" id="equipo_id_create">
+                    <select class="form-select" name="equipo_id_create" id="equipo_id_create" required>
                         <option selected>Equipos...</option>
                         {% for equipo in equipos %}
                             <option value="{{ equipo.equipo_id }}">{{ equipo.nombre }}</option>

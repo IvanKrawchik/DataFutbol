@@ -5,7 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.shortcuts import HttpResponseRedirect
 from .models import Equipos, Jugadores
-from .forms import JugadorForm
+from datetime import datetime
+
 
 # Create your views here.
 
